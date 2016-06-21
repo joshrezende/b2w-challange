@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class HeaderPage extends React.Component {
-  _furfles() {
+  _profileImagePic() {
     if(this.props.userInfo.profile_image_url != undefined){
       return this.props.userInfo.profile_image_url.split('_normal').join('');
     } else {
@@ -19,7 +19,7 @@ export default class HeaderPage extends React.Component {
           <div className="wrap">
             <div className="profile-pic">
               {/*<img src={this.props.userInfo.profile_image_url} />*/}
-              <img src={this._furfles()} />
+              <img src={this._profileImagePic()} />
             </div>
           </div>
         </div>
