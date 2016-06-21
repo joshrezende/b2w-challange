@@ -26,6 +26,12 @@ module.exports = {
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract('css!sass')
+        },
+        {
+          test: /\.ttf$/,
+          loader: require.resolve('file-loader') + '?name=[path][name].[ext]'
+          // loader: 'file?name=src/fonts/[name].[ext]'
+          // loader: 'file'
         }
       ]
     },
