@@ -5,8 +5,8 @@ export default class Tweet extends React.Component {
     return (
       <div className="tweet-item" key={this.props.data.id}>
         <div className="tweet-header">
-          <a href="#">
-            <span className="full-name">{this.props.data.user.name}</span>
+          <a href="#" className="profile-link">
+            <span className="full-name">{this.props.data.user.name}</span> &nbsp;
             <span className="screen-name">@{this.props.data.user.screen_name}</span>
           </a>
           <a href="#">
@@ -16,10 +16,38 @@ export default class Tweet extends React.Component {
         </div>
         <p className="tweet-text">{this.props.data.text}</p>
         <div className="action-buttons-container">
-          <a href="">reply</a>
-          <a href="">retweet</a>
-          <a href="">fav</a>
-          <a href="">misc</a>
+          <div className="btn-action action-reply">
+            <button className="btn" type="button">
+              <div className="icon-container">
+                <span className="icon icon-reply"></span>
+                <span className="icon-tooltip">Reply</span>
+              </div>
+            </button>
+          </div>
+          <div className="btn-action action-retweet">
+            <button className="btn" type="button">
+              <div className="icon-container">
+                <span className="icon icon-retweet"></span>
+                <span className="icon-tooltip">Retweet</span>
+              </div>
+            </button>
+          </div>
+          <div className="btn-action action-like">
+            <button className="btn" type="button">
+              <div className="icon-container">
+                <span className="icon icon-heart"></span>
+                <span className="icon-tooltip">Like</span>
+              </div>
+            </button>
+          </div>
+          <div className="btn-action action-misc-menu">
+            <button className="btn" type="button">
+              <div className="icon-container">
+                <span className="icon icon-3dots"></span>
+                <span className="icon-tooltip">Misc</span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     )

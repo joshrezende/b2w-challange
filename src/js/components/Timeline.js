@@ -42,11 +42,13 @@ export default class Timeline extends React.Component {
 
   render(){
     var tweets = this.state.data.map(function(data, index){
-      return <Tweet data={data}></Tweet>;
+      return <Tweet data={data} key={data.id}></Tweet>;
     });
     return (
       <div className="timeline">
-        {tweets}
+        <div className="tweets-list">
+          {tweets}
+        </div>
       </div>
     );
   }
