@@ -4,6 +4,13 @@
 $font-family: "Open Sans", "Helvetica", sans-serif !default;
 $font-size: 14px !default;
 
+@font-face {
+	font-family: 'twitter-icons';
+	src:url('../fonts/rosetta-icons-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 //-----------------------------------------------------------
 //ANIMATION
 //-----------------------------------------------------------
@@ -32,13 +39,13 @@ $animation-keyframes:(
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
-$grid-gutter: 10px !default;
+$grid-gutter: 20px !default;
 $grid-breakpoints:(
 	"xsmall": 100% max 600px,
 	"small":  100% min 601px max 960px,
 	"medium": 100% min 961px max 1280px,
 	"large":  1280px min 1281px max 1600px,
-    "xlarge": 1600px min 1601px
+  "xlarge": 1600px min 1601px
 )!default;
 
 //-----------------------------------------------------------

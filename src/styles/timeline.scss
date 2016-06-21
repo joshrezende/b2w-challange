@@ -1,6 +1,12 @@
 @import "libs/frontendler";
-body {background: #f5f8fa;}
+@import "elements/tweet";
+
+body {background: #f5f8fa; font-family: sans-serif;}
 * {margin: 0; padding: 0; box-sizing: border-box;}
+
+a {
+  text-decoration: none;
+}
 
 .wrap {
   margin: 0 auto;
@@ -76,7 +82,7 @@ body {background: #f5f8fa;}
 
     .profile-pic {
       background: #fff;
-      border: #000 solid 4px;
+      border: #fff solid 4px;
       border-radius: 15px;
       height: 200px;
       width: 200px;
@@ -114,6 +120,7 @@ body {background: #f5f8fa;}
 
   .timeline {
     @include grid-column(8, 12);
+
   }
 
   .sidebar-right {
@@ -129,26 +136,9 @@ body {background: #f5f8fa;}
   }
 }
 
-.tweet-item {
-  padding: 10px 12px;
-  border-bottom: #ccc solid 1px;
+.tweets-list {
+  background: #fff;
+  border: #ccc solid 1px;
+  border-radius: 6px;
 
-  .tweet-header {
-    margin: 0 0 0 60px;
-
-    .avatar {
-      border-radius: 5px;
-      float: left;
-      margin-left: -60px;
-      overflow: hidden;
-    }
-  }
-
-  .tweet-text {
-    margin: 0 0 0 60px;
-  }
-
-  .action-buttons-container {
-    margin: 0 0 0 60px;
-  }
 }
