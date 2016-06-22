@@ -1,11 +1,15 @@
 @import "libs/frontendler";
 @import "elements/tweet";
 
-body {background: #f5f8fa; font-family: sans-serif;}
+body {background: #f5f8fa; color:#292f33; font-family: sans-serif;}
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .wrap {
@@ -24,14 +28,25 @@ a {
   z-index: 5;
 
   .logo {
-    background: #f0f;
+    color: transparent;
     display: block;
     height: 20px;
     width: 20px;
     left: 50%;
+    text-align: center;
+    line-height: 20px;
     top: 50%;
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
+
+    &:before {
+      color:#1da1f2;
+      content: $icon-twitter-logo;
+      font-family: 'twitter-icons';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: normal;
+    }
   }
 }
 
@@ -102,7 +117,7 @@ a {
 
   .header-profile-info {
     background: #fff;
-    border-bottom: solid 1px  #ccc;
+    border-bottom: solid 1px  #e1e8ed;
     border-top: solid 1px rgba(0,0,0, 0.2);
     height: 60px;
   }
@@ -130,15 +145,24 @@ a {
   .who-follow-box,
   .trend-box {
     border-radius: 6px;
-    border: #ccc solid 1px;
+    border: #e1e8ed solid 1px;
     background: #fff;
     height: 300px;
   }
 }
 
-.tweets-list {
+.tabs-container {
+  .list {
+    border-bottom: #e1e8ed solid 1px;
+    li {
+      display: inline-block;
+      padding: 15px 15px 12px;
+    }
+  }
+}
+
+.tabs-tweets-container {
   background: #fff;
   border: #ccc solid 1px;
   border-radius: 6px;
-
 }
