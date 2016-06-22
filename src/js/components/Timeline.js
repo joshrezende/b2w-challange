@@ -46,8 +46,17 @@ export default class Timeline extends React.Component {
     });
     return (
       <div className="timeline">
-        <div className="tweets-list">
-          {tweets}
+        <div className="tabs-tweets-container">
+          <div className="tabs-container">
+            <ul className="list">
+              <li>Tweets</li>
+              <li>Tweets & replies</li>
+              <li>Media</li>
+            </ul>
+          </div>
+          <ul className="tweets-list">
+            {tweets}
+          </ul>
         </div>
       </div>
     );
