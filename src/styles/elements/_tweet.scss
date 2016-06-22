@@ -1,6 +1,11 @@
 .tweet-item {
   padding: 10px 12px;
-  border-bottom: #ccc solid 1px;
+  border-bottom: #e1e8ed solid 1px;
+  list-style: none;
+
+  a {
+    color: #A8A1A2;
+  }
 
   .tweet-header {
     margin: 0 0 3px 60px;
@@ -23,6 +28,32 @@
     .screen-name {
       color:#8899a6;
       font-size: 13px;
+    }
+  }
+
+  .date {
+    font-size: 13px;
+    position: relative;
+
+    .date-tooltip {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 3px;
+      color: #fff;
+      display: none;
+      font-size: 12px;
+      padding: 5px;
+      position: absolute;
+      left: 50%;
+      text-align: center;
+      top: -30px;
+      transform: translateX(-50%);
+      width: 145px;
+    }
+
+    &:hover {
+      .date-tooltip {
+        display: block;
+      }
     }
   }
 
@@ -81,7 +112,7 @@
     }
 
     .btn-action {
-      color: #000;
+      color: #aab8c2;
       display: inline-block;
       font-size: 12px;
       width: 80px;
@@ -94,19 +125,19 @@
       }
 
       &.action-reply:hover {
-        color: tomato;
+        color: #a8a1a2;
       }
 
       &.action-retweet:hover {
-        color: green;
+        color: #19cf86;
       }
 
       &.action-like:hover {
-        color: red;
+        color: #e81c4f;
       }
 
       &.action-misc-menu:hover {
-        color: blue;
+        color: #a8a1a2;
       }
     }
   }
