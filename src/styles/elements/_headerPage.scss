@@ -4,16 +4,14 @@
   position: relative;
   width: 100%;
   z-index: 3;
-  transition: all 800ms ease-in-out;
-
-  &.is-locked {
-    // position: fixed;
-    // top: -480px;
-  }
 
   &.is-locked .cover-profile-pic .cover-container {
     margin-top: -476px;
     position: fixed;
+  }
+
+  &.is-locked .cover-profile-pic .profile-pic {
+    transform: translateY(-40%);
   }
 
   .cover-profile-pic {
@@ -48,6 +46,7 @@
       position: absolute;
       bottom: 0;
       overflow: hidden;
+      transition: all 300ms ease-in-out;
       transform: translateY(40%);
       z-index: 3;
 
