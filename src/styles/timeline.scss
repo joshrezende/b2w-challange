@@ -1,5 +1,7 @@
 @import "libs/frontendler";
 @import "elements/tweet";
+@import "elements/topbar";
+@import "elements/headerPage";
 
 body {background: #f5f8fa; color:#292f33; font-family: sans-serif;}
 * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -18,113 +20,16 @@ a {
   position: relative;
 }
 
-.topbar {
-  background: #fff;
-  height: 46px;
-  border-bottom: #ccc solid 1px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
 
-  .logo {
-    color: transparent;
-    display: block;
-    height: 20px;
-    width: 20px;
-    left: 50%;
-    text-align: center;
-    line-height: 20px;
-    top: 50%;
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-
-    &:before {
-      color:#1da1f2;
-      content: $icon-twitter-logo;
-      font-family: 'twitter-icons';
-      font-size: 20px;
-      font-style: normal;
-      font-weight: normal;
-    }
-  }
-}
-
-.topbar-menu {
-  height: 46px;
-
-  .item {
-    float: left;
-    height: 46px;
-    list-style: none;
-    padding: 0 15px;
-
-    a {
-      display: block;
-      padding-top: 13px;
-    }
-  }
-}
-
-.header-page {
-  padding-top: 46px;
-  position: relative;
-  z-index: 3;
-
-  .cover-profile-pic {
-    background: red;
-    height: 500px;
-
-    .wrap {
-      height: 100%;
-    }
-
-    .cover-container {
-      height: 500px;
-      overflow: hidden;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: 46px;
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .profile-pic {
-      background: #fff;
-      border: #fff solid 4px;
-      border-radius: 15px;
-      height: 200px;
-      width: 200px;
-      position: absolute;
-      bottom: 0;
-      overflow: hidden;
-      transform: translateY(40%);
-      z-index: 3;
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-    }
-  }
-
-  .header-profile-info {
-    background: #fff;
-    border-bottom: solid 1px  #e1e8ed;
-    border-top: solid 1px rgba(0,0,0, 0.2);
-    height: 60px;
-  }
-
-}
 
 .main-container {
+  padding: 10px 0 0;
+  // transition: all 800ms ease-in-out;
+
+  // &.header-locked {
+  //   padding: 335px 0 0;
+  // }
+
   .sidebar-left {
     @include grid-column(3,12);
   }
@@ -155,7 +60,9 @@ a {
   .list {
     border-bottom: #e1e8ed solid 1px;
     li {
+      color: #ccd6dd;
       display: inline-block;
+      font-weight: 300;
       padding: 15px 15px 12px;
     }
   }

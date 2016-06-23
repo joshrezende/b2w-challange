@@ -2,6 +2,8 @@ require('../styles/timeline.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
+import throttle from './utils/throttle';
 import Topbar from './components/Topbar';
 import HeaderPage from './components/HeaderPage';
 import Timeline from './components/Timeline';
@@ -14,7 +16,8 @@ class Layout extends React.Component {
     super(props);
 
     this.state = {
-      userData: []
+      userData: [],
+      headerLocked: false
     };
   }
 
@@ -22,6 +25,7 @@ class Layout extends React.Component {
     let url = 'http://ubuntu:8080/api/user';
 
     this._makeRequest(url);
+    this._scrollListener();
   }
 
   _makeRequest(url) {
@@ -47,12 +51,29 @@ class Layout extends React.Component {
     });
   }
 
+  _scrollListener() {
+    window.addEventListener("scroll",
+      throttle((event) => {
+        // console.log(window.scrollY);
+        if(window.scrollY > 500){
+          this.setState({headerLocked: true})
+        } else {
+          this.setState({headerLocked: false})
+        }
+      }, 100)
+    );
+  }
+
   render(){
+    var mainContainerClass = classNames({
+      'main-container': true,
+      'header-locked': this.state.headerLocked
+    });
     return (
       <div>
         <Topbar></Topbar>
-        <HeaderPage userInfo={this.state.userData}></HeaderPage>
-        <div className="main-container">
+        <HeaderPage userInfo={this.state.userData} headerLocked={this.state.headerLocked}></HeaderPage>
+        <div className={mainContainerClass}>
           <div className="wrap">
             <aside className="sidebar-left">
               <div className="infos-box">
