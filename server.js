@@ -52,7 +52,7 @@ if (isDeveloping) {
   });
 
   app.get('/api/stream', function(req, res, next) {
-    twitterClient.get('statuses/user_timeline', {screen_name: 'americanascom'}, function(error, dataObj, response){
+    twitterClient.get('statuses/user_timeline', req.query, function(error, dataObj, response){
       if (!error) {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(dataObj));
@@ -61,7 +61,8 @@ if (isDeveloping) {
   });
 
   app.get('/api/who-follow', function(req, res, next) {
-    twitterClient.get('users/suggestions/musica/members', {}, function(error, dataObj, response){
+    twitterClient.get('users/suggestions/entretenimento/members', {}, function(error, dataObj, response){
+      console.log(error);
       if (!error) {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(dataObj));
