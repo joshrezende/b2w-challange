@@ -48,14 +48,17 @@ export default class TrendsTopics extends React.Component {
     })
     .map(function(trend, index){
       return (
-        <li key={index}>
-          {trend.name}
+        <li className="trend-item" key={index}>
+          <a href={trend.url}>{trend.name}</a>
+          {trend.tweet_volume != null ? trend.tweet_volume + ' Tweets' : ''}
         </li>
       )
     });
     return (
       <div className="trend-box">
-        <h4 className="box-title">Trends</h4>
+        <div className="box-header">
+          <h4 className="box-title">Trends</h4>
+        </div>
         <ul className="list">
           {topTrends}
         </ul>

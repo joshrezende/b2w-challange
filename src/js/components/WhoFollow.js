@@ -44,16 +44,28 @@ export default class WhoFollow extends React.Component {
     }).map(function(user, index){
       return (
         <li class="item" key={index}>
-          <img src={user.profile_image_url} />
-          <span className="user-name">{user.name}</span>
-          <span className="screen-name">@{user.screen_name}</span>
+          <img className="follow-pic" src={user.profile_image_url} />
+          <div className="item-content">
+            <a href="#" className="follow-link">
+              <span className="user-name">{user.name}</span>
+              <span className="screen-name">@{user.screen_name}</span>
+            </a>
+            <button type="button" className="btn btn-follow">
+              <span className="icon icon-plus-person"></span>
+                Follow
+            </button>
+          </div>
         </li>
       )
     });
 
     return (
       <div className="who-follow-box">
-        <h4 className="box-title">Who to follow</h4>
+        <div class="box-header">
+          <h4 className="box-title">Who to follow</h4>
+          <a href="#">Refresh</a>
+          <a href="#">View all</a>
+        </div>
           <ul className="list">
             {suggestions}
           </ul>

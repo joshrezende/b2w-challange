@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import throttle from './utils/throttle';
+import dateFormat from './utils/dateFormat';
 import Topbar from './components/Topbar';
 import HeaderPage from './components/HeaderPage';
 import Timeline from './components/Timeline';
@@ -16,7 +17,7 @@ class Layout extends React.Component {
     super(props);
 
     this.state = {
-      userData: [],
+      userData: {},
       headerLocked: false
     };
   }
@@ -51,6 +52,14 @@ class Layout extends React.Component {
     });
   }
 
+  _profileLink(){
+    if(this.state.userData.entities){
+      return this.state.userData.entities.url.urls[0].display_url;
+    }
+
+    return '';
+  }
+
   _scrollListener() {
     window.addEventListener("scroll",
       throttle((event) => {
@@ -78,10 +87,20 @@ class Layout extends React.Component {
             <aside className="sidebar-left">
               <div className="infos-box">
                 <p className="user-name">{this.state.userData.name}</p>
-                <p className="scren-name">{this.state.userData.screen_name}</p>
+                <p className="screen-name">@{this.state.userData.screen_name}</p>
                 <p className="user-bio">{this.state.userData.description}</p>
-                <p className="user-location">{this.state.userData.location}</p>
-                <p className="user-joined">{this.state.userData.created_at}</p>
+                <p className="user-location">
+                  <span className="icon icon-location"></span>
+                  {this.state.userData.location}
+                </p>
+                <p className="user-site">
+                  <span className="icon icon-link"></span>
+                  {this._profileLink()}
+                </p>
+                <p className="user-joined">
+                  <span className="icon icon-calendar"></span>
+                  Joined {dateFormat(this.state.userData.created_at, 'mmm yyyy')}
+                </p>
               </div>
               <div className="followers-box"></div>
               <div className="media-box"></div>
