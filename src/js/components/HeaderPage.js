@@ -66,7 +66,7 @@ export default class HeaderPage extends React.Component {
               </div>
             </div>
             <div className="infos-misc">
-              <a href="#" className="info-item">
+              <a href="#" className="info-item active">
                 <span className="title">tweets</span>
                 <span className="count">{this.props.userInfo.statuses_count}</span>
               </a>
