@@ -14,7 +14,11 @@ ul {
 
 .wrap {
   margin: 0 auto;
-  max-width: 600px;
+  width: 100%;
+
+  @include grid-breakpoint(large){
+    max-width: 600px;
+  }
 }
 
 .topbar {
@@ -55,7 +59,7 @@ ul {
     bottom: 0;
     position: absolute;
     transform: translateY(25%);
-    width: 200px;
+    width: 150px;
 
     img {
       display: block;
@@ -77,6 +81,20 @@ ul {
 
   &.active {
     display: block;
+  }
+}
+
+.tabs-container {
+  .list {
+    border-bottom: #e1e8ed solid 1px;
+    li {
+      color: $link-border-color2;
+      display: inline-block;
+      font-weight: 300;
+      padding: 15px 15px 12px;
+      text-align: center;
+      width: 33.3333%;
+    }
   }
 }
 
