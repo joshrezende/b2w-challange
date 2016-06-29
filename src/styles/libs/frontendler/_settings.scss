@@ -44,8 +44,7 @@ $grid-breakpoints:(
 	"xsmall": 100% max 600px,
 	"small":  100% min 601px max 960px,
 	"medium": 100% min 961px max 1280px,
-	"large":  1280px min 1281px max 1600px,
-  "xlarge": 1600px min 1601px
+	"large":  1280px min 1281px,
 )!default;
 
 //-----------------------------------------------------------
@@ -66,3 +65,4 @@ $colors:(
 ) !default;
 
 $link-border-color: #A8A1A2;
+$link-border-color2: #1da1f2;

@@ -37,8 +37,13 @@ if (isDeveloping) {
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-  app.get('/', function response(req, res) {
+  app.get('/', function(req, res) {
     res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'src/index.html')));
+    res.end();
+  });
+
+  app.get('/mobile', function(req, res) {
+    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'src/mobile.html')));
     res.end();
   });
 
