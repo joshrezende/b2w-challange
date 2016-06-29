@@ -8,10 +8,16 @@ module.exports = {
     context: __dirname + '/src',
     devtool: debug ? 'inline-sourcemap' : null,
     // entry: './js/client.js',
-    entry: [
-      'webpack-hot-middleware/client?reload=true',
-      path.join(__dirname, 'src/js/client.js')
-    ],
+    entry: {
+      web:[
+        'webpack-hot-middleware/client?reload=true',
+        path.join(__dirname, 'src/js/client.js'),
+      ],
+      mobile:[
+        'webpack-hot-middleware/client?reload=true',
+        path.join(__dirname, 'src/js/mobile-client.js'),
+      ]
+    },
     module: {
       loaders: [
         {
@@ -50,8 +56,13 @@ module.exports = {
     plugins: debug ? [
       new HtmlWebpackPlugin({
         template: 'index.tpl.html',
-        inject: 'body',
+        inject: false,
         filename: 'index.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: 'mobile.tpl.html',
+        inject: false,
+        filename: 'mobile.html'
       }),
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
@@ -59,9 +70,9 @@ module.exports = {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('development')
       }),
-      new ExtractTextPlugin('css/style.css', {
+      new ExtractTextPlugin('css/[name].css', {
         allChunks: true
-      })
+      }),
     ] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),

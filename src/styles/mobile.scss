@@ -1,0 +1,164 @@
+@import "libs/frontendler";
+
+body {background: #f5f8fa; color:#292f33; font-family: sans-serif;}
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+a {
+  color: $link-border-color2;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.topbar {
+  background: #fff;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.cover-profile-pic {
+  position: relative;
+
+  .cover-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1500px;
+
+    .furfles {
+      width: 100%;
+      padding-bottom: 33.3333%;
+    }
+
+    img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: 100%;
+      width: auto;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .profile-pic {
+    border: #fff solid 4px;
+    border-radius: 4px;
+    bottom: 0;
+    position: absolute;
+    transform: translateY(25%);
+    width: 200px;
+
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.splash-container {
+  background: $link-border-color2;
+  display: none;
+  position: fixed;
+  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  &.active {
+    display: block;
+  }
+}
+
+.tweet-item {
+  padding: 10px 12px;
+  border-bottom: #e1e8ed solid 1px;
+  list-style: none;
+
+  .tweet-header {
+    margin: 0 0 3px 60px;
+
+    .avatar {
+      border-radius: 5px;
+      float: left;
+      margin-left: -60px;
+      overflow: hidden;
+    }
+  }
+
+  .profile-link {
+    line-height: 14px;
+
+    .full-name {
+      color: #292f33;
+      font-weight: bold;
+    }
+    .screen-name {
+      color:#8899a6;
+      font-size: 13px;
+    }
+  }
+
+  .date {
+    font-size: 13px;
+    position: relative;
+
+  }
+
+  .tweet-text {
+    line-height: 1.5em;
+    margin: 0 0 10px 60px;
+  }
+
+  .action-buttons-container {
+    font-size: 0;
+    margin: 0 0 0 60px;
+
+    .icon {
+      color: inherit;
+      font-family: 'twitter-icons';
+      font-size: 16px;
+      display: inline-block;
+      line-height: 20px;
+    }
+
+    .icon-container {
+      position: relative;
+    }
+
+    .icon-reply:before {
+      content: $icon-reply;
+    }
+    .icon-retweet:before {
+      content: $icon-retweet;
+    }
+    .icon-heart:before {
+      content: $icon-heart;
+    }
+
+    .btn-action {
+      color: #aab8c2;
+      display: inline-block;
+      font-size: 12px;
+      width: 80px;
+
+      .btn {
+        border: 0 none;
+        background: none;
+        cursor: pointer;
+        color: inherit;
+      }
+
+    }
+  }
+}

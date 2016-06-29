@@ -1,4 +1,4 @@
-require('../styles/timeline.scss');
+require('../styles/web.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -27,6 +27,10 @@ class Layout extends React.Component {
 
     this._makeRequest(url);
     this._scrollListener();
+  }
+
+  componentWillMount(){
+    console.log(navigator.userAgent);
   }
 
   _makeRequest(url) {
