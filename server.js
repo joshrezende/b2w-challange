@@ -10,10 +10,10 @@ const Twitter = require('twitter');
 require('dotenv').config();
 
 const twitterClient = new Twitter({
-  consumer_key: VpsVd2g7fQvwYOAiKDlUblDJn,
-  consumer_secret: WnKU7gmpyANpZdXTDpruLl2JnUdchxMleZ2xZd0Vvy2UUbl6PS,
-  access_token_key: 14172217-G8kdnQ7cFAYeGZ0oUIBPgIyiK0p0lXpeGiz28TdYq,
-  access_token_secret: yrSMOWtGb9QYzGY3I8SFbxk7AwRJKIabFwUam6Ihq9w2s
+  consumer_key: 'VpsVd2g7fQvwYOAiKDlUblDJn',
+  consumer_secret: 'WnKU7gmpyANpZdXTDpruLl2JnUdchxMleZ2xZd0Vvy2UUbl6PS',
+  access_token_key: '14172217-G8kdnQ7cFAYeGZ0oUIBPgIyiK0p0lXpeGiz28TdYq',
+  access_token_secret: 'yrSMOWtGb9QYzGY3I8SFbxk7AwRJKIabFwUam6Ihq9w2s'
 });
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
