@@ -2,10 +2,10 @@
 
 ### Run Instrucions
 
-make install
-make start
-http://localhost:8080
-http://localhost:8080/mobile
+* make install
+* make start
+* http://localhost:8080
+* http://localhost:8080/mobile
 
 
 
