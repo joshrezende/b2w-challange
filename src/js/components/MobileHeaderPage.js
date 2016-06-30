@@ -44,15 +44,26 @@ export default class HeaderPage extends React.Component {
         </div>
         <div className="header-profile-info">
           <div className="wrap">
-            <p className="user-name">{this.props.userInfo.name}</p>
-            <p className="screen-name">@{this.props.userInfo.screen_name}</p>
-            <p className="user-bio">{this.props.userInfo.description}</p>
-            <p className="user-location">
-              {this.props.userInfo.location}
-            </p>
-            <p className="user-site">
-              {this._profileLink()}
-            </p>
+            <div className="info-content">
+              <div className="btns-container">
+                <button className="btn btn-gear">
+                  <span className="icon icon-gear"></span>
+                </button>
+                <button className="btn btn-follow">
+                  <span className="icon icon-plus-person"></span>
+                  Follow
+                </button>
+              </div>
+              <p className="user-name">{this.props.userInfo.name}</p>
+              <p className="screen-name">@{this.props.userInfo.screen_name}</p>
+              <p className="user-bio">{this.props.userInfo.description}</p>
+              <p className="user-location">
+                {this.props.userInfo.location}
+              </p>
+              <p className="user-site">
+                {this._profileLink()}
+              </p>
+            </div>
           </div>
         </div>
       </div>

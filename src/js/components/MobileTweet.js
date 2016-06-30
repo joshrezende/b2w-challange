@@ -75,15 +75,13 @@ export default class Tweet extends React.Component {
   render() {
     return (
       <li className="tweet-item" key={this.props.data.id}>
+        <img className="avatar" src={this.props.data.user.profile_image_url} />
         <div className="tweet-header">
+          <span className="date">{this._tweetDate()}</span>
           <a href="#" className="profile-link">
             <span className="full-name">{this.props.data.user.name}</span>&nbsp;
             <span className="screen-name">@{this.props.data.user.screen_name}</span>
-          </a>&nbsp;-&nbsp;
-          <a href="#">
-            <span className="date">{this._tweetDate()}</span>
           </a>
-          <img className="avatar" src={this.props.data.user.profile_image_url} />
         </div>
         <p className="tweet-text" dangerouslySetInnerHTML={this._parsedText()}></p>
         <div className="action-buttons-container">

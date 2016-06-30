@@ -18,6 +18,11 @@ export default class Topbar extends React.Component {
             <li className="item">
               <a href="#"><span class="icon icon-search"></span></a>
             </li>
+            <li className="item">
+              <a href="#">
+                <img className="logged-pic" src="http://dummyimage.com/25x25/" />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
