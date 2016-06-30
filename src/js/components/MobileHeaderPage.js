@@ -29,12 +29,15 @@ export default class HeaderPage extends React.Component {
   }
 
   render(){
+    var furflesStyle = {
+      backgroundImage: 'url(' + this.props.userInfo.profile_banner_url + '/ipad)',
+    };
     return (
       <div className="header-page">
         <div className="cover-profile-pic">
           <div className="cover-container">
-            <div className="furfles"></div>
-            <img src={this.props.userInfo.profile_banner_url + '/ipad'} />
+            <div className="furfles" style={furflesStyle}></div>
+            {/*<img src={this.props.userInfo.profile_banner_url + '/ipad'} />*/}
           </div>
           <div className="wrap">
             <div className="profile-pic">
